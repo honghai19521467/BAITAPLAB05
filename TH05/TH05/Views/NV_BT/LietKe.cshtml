@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "LietKe";
+}
+<p>Danh sách thiết bị của nhân viên được chọn sửa</p>
+@if (ViewBag.dsNVBT != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã thiết bị</th>
+                <th>Mã căn hộ</th>
+                <th>Lần thứ</th>
+                <th>Ngày bảo trì</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var list in (List<NV_BT>)ViewBag.dsNVBT)
+            {
+                <tr>
+                    <td>@list.MaThietBi</td>
+                    <td>@list.MaCanHo</td>
+                    <td>@list.LanThu</td>
+                    <td>@list.NgayBaoTri</td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { MaThietBi = @list.MaThietBi, MaCanHo = @list.MaCanHo, MaNhanVien = @list.MaNhanVien, LanThu = list.LanThu }, new { onclick = "return confirm('Bạn chắc chắn muốn xóa danh mục này?');", @class = "btn btn-danger" })
+                        @Html.ActionLink("View", "Edit", new { MaThietBi = @list.MaThietBi, MaCanHo = @list.MaCanHo, MaNhanVien = @list.MaNhanVien, LanThu = @list.LanThu, NgayBaoTri = list.NgayBaoTri}, new { @class = "btn btn-secondary" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

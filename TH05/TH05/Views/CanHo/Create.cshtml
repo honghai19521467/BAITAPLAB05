@@ -1,0 +1,26 @@
+﻿@model TH05.Models.CanHo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaCanHo" class="control-label"></label>
+                <input asp-for="MaCanHo" class="form-control" />
+                <span asp-validation-for="MaCanHo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenCanHo" class="control-label"></label>
+                <input asp-for="TenCanHo" class="form-control" />
+                <span asp-validation-for="TenCanHo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+
+

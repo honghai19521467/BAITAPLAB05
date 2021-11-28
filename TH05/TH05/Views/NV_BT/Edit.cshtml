@@ -1,0 +1,36 @@
+﻿@model TH05.Models.NV_BT
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MaNhanVien" />
+    <div class="form-group">
+        <label asp-for="MaCanHo" class="control-label"></label>
+        <input asp-for="MaCanHo" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="MaThietBi" class="control-label"></label>
+        <input asp-for="MaThietBi" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="LanThu" class="control-label"></label>
+        <input asp-for="LanThu" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="NgayBaoTri" class="control-label"></label>
+        <input asp-for="NgayBaoTri" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>
+
+
+
